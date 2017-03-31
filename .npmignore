@@ -1,0 +1,5 @@
+*.DS_Store
+spec/*
+coverage/*
+build-word-list.js
+WORDS.json

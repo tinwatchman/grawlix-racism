@@ -1,0 +1,41 @@
+{
+  "name": "grawlix-racism",
+  "version": "1.0.0",
+  "description": "Replaces racial slurs with nonsensical symbols",
+  "main": "grawlix-racism.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
+  },
+  "engines": {
+    "node": ">=7.3.0"
+  },
+  "keywords": [
+    "grawlix",
+    "profanity",
+    "filter",
+    "slur",
+    "racial",
+    "racism",
+    "replace",
+    "plugin",
+    "regex",
+    "regexp"
+  ],
+  "author": "Jon Stout (www.jonstout.net)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tinwatchman/grawlix-racism.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinwatchman/grawlix-racism/issues"
+  },
+  "dependencies": {
+    "grawlix": "^1.0.4"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.5.3",
+    "underscore": "^1.8.3"
+  }
+}
