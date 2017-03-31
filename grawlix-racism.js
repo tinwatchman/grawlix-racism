@@ -1,3 +1,15 @@
+/**
+ * grawlix-racism
+ * A plugin focused on replacing racial slurs with nonsense characters.
+ * 
+ * WARNING: THIS PLUGIN DEALS DIRECTLY WITH TERMS THAT MANY FIND OFFENSIVE, 
+ * IMPOLITE, AND/OR DISTASTEFUL. AS SUCH, ALL SOURCE CODE SHOULD BE CONSIDERED 
+ * NSFW/NOT SAFE FOR WORK UNLESS OTHERWISE STATED. PLEASE READ THESE FILES AT 
+ * YOUR OWN RISK!
+ *
+ * @version 1.0.0
+ */
+
 'use strict';
 
 const GrawlixPlugin = require('grawlix').GrawlixPlugin;
