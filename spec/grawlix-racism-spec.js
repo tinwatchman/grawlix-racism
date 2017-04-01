@@ -16,6 +16,9 @@ describe('grawlix-racism', function() {
   describe('#filters', function() {
 
     beforeAll(function() {
+      grawlix.setDefaults({
+        allowed: [ 'shit' ]
+      });
       grawlix.loadPlugin(plugin);
     });
 
@@ -289,6 +292,123 @@ describe('grawlix-racism', function() {
       });
       it('should match wooooooooogssss', function() {
         expect(grawlix.isObscene('wooooooooogssss')).toBe(true);
+      });
+    });
+
+    describe('shitskin', function() {
+      it('should match shitskins', function() {
+        expect(grawlix.isObscene('shitskins')).toBe(true);
+      });
+      it('should match $h1t$k1n$', function() {
+        expect(grawlix.isObscene('$h1t$k1n$')).toBe(true);
+      });
+      it('should match shitskin', function() {
+        expect(grawlix.isObscene('shitskin')).toBe(true);
+      });
+      it('should match $h1t$k1n', function() {
+        expect(grawlix.isObscene('$h1t$k1n')).toBe(true);
+      });
+    });
+
+    describe('latrino', function() {
+      it('should match latrinos', function() {
+        expect(grawlix.isObscene('latrinos')).toBe(true);
+      });
+      it('should match latrino', function() {
+        expect(grawlix.isObscene('latrino')).toBe(true);
+      });
+      it('should match l@tr1n0', function() {
+        expect(grawlix.isObscene('l@tr1n0')).toBe(true);
+      });
+    });
+
+    describe('chinkerbell', function() {
+      it('should match chinkerbell', function() {
+        expect(grawlix.isObscene('chinkerbell')).toBe(true);
+      });
+      it('should match ch1nk3rb3ll', function() {
+        expect(grawlix.isObscene('ch1nk3rb3ll')).toBe(true);
+      });
+    });
+
+    describe('shvooga', function() {
+      it('should match shvoogas', function() {
+        expect(grawlix.isObscene('shvoogas')).toBe(true);
+      });
+      it('should match shvooga', function() {
+        expect(grawlix.isObscene('shvooga')).toBe(true);
+      });
+      it('should match $hv00g@', function() {
+        expect(grawlix.isObscene('$hv00g@')).toBe(true);
+      });
+    });
+
+    describe('negress', function() {
+      it('should match negress', function() {
+        expect(grawlix.isObscene('negress')).toBe(true);
+      });
+      it('should match n3gr3$$', function() {
+        expect(grawlix.isObscene('n3gr3$$')).toBe(true);
+      });
+    });
+
+    describe('sambo', function() {
+      it('should match sambos', function() {
+        expect(grawlix.isObscene('sambos')).toBe(true);
+      });
+      it('should match samboes', function() {
+        expect(grawlix.isObscene('samboes')).toBe(true);
+      });
+      it('should match $@mb0$', function() {
+        expect(grawlix.isObscene('$@mb0$')).toBe(true);
+      });
+      it('should match sambo', function() {
+        expect(grawlix.isObscene('sambo')).toBe(true);
+      });
+      it('should match $@mb0', function() {
+        expect(grawlix.isObscene('$@mb0')).toBe(true);
+      });
+      it('should match s a m b o', function() {
+        expect(grawlix.isObscene('s a m b o')).toBe(true);
+      });
+    });
+
+    describe('kaffir', function() {
+      it('should match kaffirs', function() {
+        expect(grawlix.isObscene('kaffirs')).toBe(true);
+      });
+      it('should match kaffers', function() {
+        expect(grawlix.isObscene('kaffers')).toBe(true);
+      });
+      it('should match caffers', function() {
+        expect(grawlix.isObscene('caffers')).toBe(true);
+      });
+      it('should match k@ff3r$', function() {
+        expect(grawlix.isObscene('k@ff3r$')).toBe(true);
+      });
+      it('should match caffres', function() {
+        expect(grawlix.isObscene('caffres')).toBe(true);
+      });
+      it('should match caffre', function() {
+        expect(grawlix.isObscene('caffre')).toBe(true);
+      });
+      it('should match c a f f r e', function() {
+        expect(grawlix.isObscene('c a f f r e')).toBe(true);
+      });
+      it('should match kaffir', function() {
+        expect(grawlix.isObscene('kaffir')).toBe(true);
+      });
+      it('should match kaffer', function() {
+        expect(grawlix.isObscene('kaffer')).toBe(true);
+      });
+      it('should match caffer', function() {
+        expect(grawlix.isObscene('caffer')).toBe(true);
+      });
+      it('should match k@ff3r', function() {
+        expect(grawlix.isObscene('k@ff3r')).toBe(true);
+      });
+      it('should match k a f f e r', function() {
+        expect(grawlix.isObscene('k a f f e r')).toBe(true);
       });
     });
 

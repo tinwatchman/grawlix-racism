@@ -10,9 +10,9 @@ var packageInfo = require('./package.json');
 var fs = require('fs');
 var _ = require('underscore');
 // get words
-var words = _.map(plugin.filters, function(filter) {
-  return filter.word;
-});
+var words = _.pluck(_.filter(plugin.filters, function(filter) {
+  return (_.has(filter, 'pattern'));
+}), 'word');
 words.sort(function(a, b) {
   return (a < b) ? -1 : 1;
 });
@@ -24,10 +24,13 @@ var obj = {
 };
 var json = JSON.stringify(obj, null, 4);
 console.log(json);
-console.log('word count: %d', words.length);
+console.log('total word count: %d', words.length);
 // don't count plurals
 var noPlurals = _.filter(words, function(word) {
-  return (word.search(/s$/i) === -1);
+  return (
+    word === 'negress' ||
+    word.search(/s$/i) === -1
+  );
 });
 console.log('minus plurals: %d', noPlurals.length);
 // save file

@@ -217,6 +217,92 @@ var FILTERS = [
     priority: 2,
     expandable: true,
     template: FilterTemplate.BETWEEN
+  },
+  /* kaffir (South African slur) and variants */
+  {
+    word: 'kaffirs',
+    pattern: /[ck][a@]ff[ie3]r[s$z]/i,
+    priority: 0
+  },
+  {
+    word: 'caffres',
+    pattern: /[ck][a@]ffr[e3][s$z]/i,
+    priority: 0
+  },
+  {
+    word: 'caffre',
+    pattern: /[ck][\W\d_]{0,42}[a@][\W\d_]{0,42}f[\W\d_]{0,42}f[\W\d_]{0,42}r[\W0-24-9_]{0,42}[e3]/i,
+    priority: 1,
+    expandable: true
+  },
+  {
+    word: 'kaffir',
+    pattern: /[ck]+[\W\d_]{0,42}[a@]+[\W\d_]{0,42}(?:f[\W024-9_]{0,42})+[i1e3]+[\W024-9_]{0,42}r+/i,
+    priority: 2,
+    expandable: true
+  },
+  /* shitskin */
+  {
+    word: 'shitskins',
+    pattern: /[s$]h[i1]t[s$]k[i1]n[s$]/i,
+    priority: 0
+  },
+  {
+    word: 'shitskin',
+    pattern: /[s$]h[i1]t[s$]k[i1]n/i,
+    priority: 1
+  },
+  // adjust priority of default 'shit' filter to avoid conflicts
+  {
+    word: 'shit',
+    priority: 2
+  },
+  /* latrino */
+  {
+    word: 'latrinos',
+    pattern: /[l1][a@]tr[i1]n[o0][s$z]/i,
+    priority: 0
+  },
+  {
+    word: 'latrino',
+    pattern: /[l1][a@]tr[i1]n[o0]/i,
+    priority: 1
+  },
+  /* chinkerbell */
+  {
+    word: 'chinkerbell',
+    pattern: /ch[i1]nk[e3]rb[e3][l1][l1]+/i,
+    priority: 0,
+    expandable: true
+  },
+  /* shvooga */
+  {
+    word: 'shvoogas',
+    pattern: /[s$]hv[o0][o0]g[a@][s$]/i,
+    priority: 0
+  },
+  {
+    word: 'shvooga',
+    pattern: /[s$]hv[o0][o0]g[a@]/i,
+    priority: 1
+  },
+  /* negress */
+  {
+    word: 'negress',
+    pattern: /n[e3]gr[e3][s$z][s$z]+/i,
+    priority: 0,
+    expandable: true
+  },
+  /* sambo */
+  {
+    word: 'sambos',
+    pattern: /[s$][a@]mb[o0][e3]*[s$]/i,
+    priority: 0
+  },
+  {
+    word: 'sambo',
+    pattern: /[s$][\W\d_]{0,42}[a@][\W\d_]{0,42}m[\W\d_]{0,42}b[\W1-9_]{0,42}[o0]/i,
+    priority: 1
   }
 ];
 
