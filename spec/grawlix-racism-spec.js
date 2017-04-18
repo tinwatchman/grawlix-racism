@@ -571,4 +571,45 @@ describe('grawlix-racism', function() {
     
   });
 
+  describe('#useDistinctStyle option', function() {
+
+    it('should set the style of all filters', function() {
+      plugin.init({
+        useDistinctStyle: 'redacted'
+      });
+      var isSet = _.every(plugin.filters, function(filter) {
+        return (!_.has(filter, 'pattern') || filter.style === 'redacted');
+      });
+      expect(isSet).toBe(true);
+    });
+
+    it('should unset the style if set to false', function() {
+      plugin.init({
+        useDistinctStyle: false
+      });
+      var isUnset = _.every(plugin.filters, function(filter) {
+        return (_.isUndefined(filter.style) || filter.style === null);
+      });
+      expect(isUnset).toBe(true);
+    });
+
+    it('should unset the style if set to null', function() {
+      plugin.init({
+        useDistinctStyle: null
+      });
+      var isUnset = _.every(plugin.filters, function(filter) {
+        return (_.isUndefined(filter.style) || filter.style === null);
+      });
+      expect(isUnset).toBe(true);
+    });
+
+    afterAll(function() {
+      // reset filter styles to default
+      plugin.init({
+        useDistinctStyle: 'nazi'
+      });
+    });
+
+  });
+
 });

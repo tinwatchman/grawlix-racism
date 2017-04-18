@@ -7,15 +7,28 @@
  * NSFW/NOT SAFE FOR WORK UNLESS OTHERWISE STATED. PLEASE READ THESE FILES AT 
  * YOUR OWN RISK!
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 'use strict';
 
 const GrawlixPlugin = require('grawlix').GrawlixPlugin;
 const FilterTemplate = require('grawlix').FilterTemplate;
-const GrawlixStyle = require('grawlix').GrawlixStyle;
 
+const _ = require('underscore');
+
+/**
+ * Default options
+ * @type {Object}
+ */
+const DEFAULTS = {
+  useDistinctStyle: 'nazi'
+};
+
+/**
+ * Plugin filters
+ * @type {Array}
+ */
 var FILTERS = [
   /* N-word and variants */
   {
@@ -255,7 +268,7 @@ var FILTERS = [
   // adjust priority of default 'shit' filter to avoid conflicts
   {
     word: 'shit',
-    priority: 2
+    minPriority: 2
   },
   /* latrino */
   {
@@ -306,12 +319,38 @@ var FILTERS = [
   }
 ];
 
+/**
+ * Plugin styles
+ * @type {Array}
+ */
 const STYLES = [
-  new GrawlixStyle('nazi', '卐')
+  {
+    name: 'nazi',
+    char: '卐'
+  }
 ];
 
 module.exports = new GrawlixPlugin({
   name: 'grawlix-racism',
   filters: FILTERS,
-  styles: STYLES
+  styles: STYLES,
+  init: function(options) {
+    _.defaults(options, DEFAULTS);
+    if (options.useDistinctStyle !== false && 
+        !_.isEmpty(options.useDistinctStyle)) {
+      // set override style for racism filters
+      _.each(this.filters, function(filter) {
+        if (_.has(filter, 'pattern')) {
+          filter.style = options.useDistinctStyle;
+        }
+      });
+    } else {
+      // unset override styles
+      _.each(this.filters, function(filter) {
+        if (_.has(filter, 'style')) {
+          delete filter.style;
+        }
+      });
+    }
+  }
 });

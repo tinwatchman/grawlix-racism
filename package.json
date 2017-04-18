@@ -1,10 +1,10 @@
 {
   "name": "grawlix-racism",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Replaces racial slurs with nonsensical symbols",
   "main": "grawlix-racism.js",
   "scripts": {
-    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js -x 'spec/**'"
   },
   "engines": {
     "node": ">=7.3.0"
@@ -31,11 +31,11 @@
     "url": "https://github.com/tinwatchman/grawlix-racism/issues"
   },
   "dependencies": {
-    "grawlix": "^1.0.4"
+    "grawlix": "^1.0.5",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
-    "jasmine": "^2.5.3",
-    "underscore": "^1.8.3"
+    "jasmine": "^2.5.3"
   }
 }
