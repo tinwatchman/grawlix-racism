@@ -2,6 +2,7 @@ grawlix-racism
 ==============
 
 [![Build Status](https://travis-ci.org/tinwatchman/grawlix-racism.svg?branch=master)](https://travis-ci.org/tinwatchman/grawlix-racism)
+[![Dependency Status](https://gemnasium.com/tinwatchman/grawlix-racism.svg)](https://gemnasium.com/tinwatchman/grawlix-racism)
 [![Coverage Status](https://coveralls.io/repos/github/tinwatchman/grawlix-racism/badge.svg?branch=master)](https://coveralls.io/github/tinwatchman/grawlix-racism?branch=master)
 
 A plugin for [`grawlix`](https://www.npmjs.com/package/grawlix) that focuses on replacing racial and ethnic slurs with nonsensical characters. This module adds filters for twenty-four different racist terms and their variants.
