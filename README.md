@@ -24,7 +24,7 @@ grawlix.setDefaults({
     {
       plugin: require('grawlix-racism'),
       options: {
-        useDistinctStyle: 'nazi'
+        style: 'nazi'
       }
     }
   ]
@@ -32,13 +32,13 @@ grawlix.setDefaults({
 });
 // or alternately:
 grawlix.loadPlugin('grawlix-racism', {
-  useDistinctStyle: 'nazi'
+  style: 'nazi'
 });
 ```
 
 ## Options
 
-### useDistinctStyle
+### style
 
 Type: `String`<br>
 Default: `'nazi'`
@@ -53,14 +53,14 @@ grawlix.setDefaults({
     {
       plugin: require('grawlix-racism'),
       options: {
-        useDistinctStyle: false
+        style: false
       }
     }
   ]
 });
 // or:
 grawlix.loadPlugin('grawlix-racism', {
-  useDistinctStyle: false
+  style: false
 });
 ```
 
@@ -73,7 +73,7 @@ grawlix.setDefaults({
     {
       plugin: require('grawlix-racism'),
       options: {
-        useDistinctStyle: 'asterix'
+        style: 'asterix'
       }
     }
   ]
@@ -118,6 +118,11 @@ grawlix('some kind of racialslur');
 ```sh
 npm test
 ```
+
+## Release History
+
+- 1.0.2
+  * Shortened `useDistinctStyle` option to `style`
 
 ## Credits and Licensing
 

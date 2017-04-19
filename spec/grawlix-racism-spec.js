@@ -571,11 +571,11 @@ describe('grawlix-racism', function() {
     
   });
 
-  describe('#useDistinctStyle option', function() {
+  describe('#style option', function() {
 
     it('should set the style of all filters', function() {
       plugin.init({
-        useDistinctStyle: 'redacted'
+        style: 'redacted'
       });
       var isSet = _.every(plugin.filters, function(filter) {
         return (!_.has(filter, 'pattern') || filter.style === 'redacted');
@@ -585,7 +585,7 @@ describe('grawlix-racism', function() {
 
     it('should unset the style if set to false', function() {
       plugin.init({
-        useDistinctStyle: false
+        style: false
       });
       var isUnset = _.every(plugin.filters, function(filter) {
         return (_.isUndefined(filter.style) || filter.style === null);
@@ -595,7 +595,7 @@ describe('grawlix-racism', function() {
 
     it('should unset the style if set to null', function() {
       plugin.init({
-        useDistinctStyle: null
+        style: null
       });
       var isUnset = _.every(plugin.filters, function(filter) {
         return (_.isUndefined(filter.style) || filter.style === null);
@@ -606,7 +606,7 @@ describe('grawlix-racism', function() {
     afterAll(function() {
       // reset filter styles to default
       plugin.init({
-        useDistinctStyle: 'nazi'
+        style: 'nazi'
       });
     });
 

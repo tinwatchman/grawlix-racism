@@ -22,7 +22,7 @@ const _ = require('underscore');
  * @type {Object}
  */
 const DEFAULTS = {
-  useDistinctStyle: 'nazi'
+  style: 'nazi'
 };
 
 /**
@@ -336,12 +336,11 @@ module.exports = new GrawlixPlugin({
   styles: STYLES,
   init: function(options) {
     _.defaults(options, DEFAULTS);
-    if (options.useDistinctStyle !== false && 
-        !_.isEmpty(options.useDistinctStyle)) {
+    if (options.style !== false && !_.isEmpty(options.style)) {
       // set override style for racism filters
       _.each(this.filters, function(filter) {
         if (_.has(filter, 'pattern')) {
-          filter.style = options.useDistinctStyle;
+          filter.style = options.style;
         }
       });
     } else {
